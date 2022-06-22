@@ -423,5 +423,5 @@ function deleteProduct(product, productName) {
     return console.log(product);
 
 }
-deleteProduct(products, "apple");
+deleteProduct(products, "apple"); 
 
