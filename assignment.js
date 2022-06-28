@@ -132,7 +132,7 @@ for (let num = 1; num < 102; num += 2) {
 console.log(number2);
 /*
 8. Calculator
-Write a simple calculator program that calculates 
+Write a simple calculator program that calculates  
 the difference, sum or product of two numbers. 
 
 The function takes as a parameter, the type of calculation to perform and two numbers.
