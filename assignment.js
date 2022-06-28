@@ -141,7 +141,8 @@ Then based on the type of calculation given
 (addition, subtraction, multiplication, division), 
 it performs the calculation and returns the result. 
 */
-function myCalculator(number1, operator, number2) {
+function calculator(number1, operator, number2) {
+    let result;
     if (operator == '+') {
         result = number1 + number2;
     } else if (operator == '-') {
@@ -154,7 +155,7 @@ function myCalculator(number1, operator, number2) {
     return result;
     
 }
-console.log(myCalculator(100, '*', 3));
+console.log(calculator(100, '*', 3));
 
 /* 9. 
 Write a function that takes three numbers and write two more functions 
@@ -166,11 +167,11 @@ function maxMin(a, b, c) {
 
     function largest(a, b, c){
        if (a > b && a > c ) {
-           result = "The largest number is " + a;
+           result = a;
         } else if(b > a && b > c) {
-            result = "The largest number is " + b;
+            result = b;
         } else if(c > a && c > b) {
-            result = "The largest number is " + c;  
+            result = c;  
         }
         return result;
 
@@ -178,11 +179,11 @@ function maxMin(a, b, c) {
     
     function smallest(a, b, c){
         if (a < b && a < c) {
-            result = "The smallest number is " + a;
+            result = a;
         } else if(b < a && b < c) {
-            result = "The smallest number is " + b;
+            result = b;
         } else if ( c < a && c < b) {
-            result = "The smallest number is " + c;
+            result = c;
         }
         return result;
        
