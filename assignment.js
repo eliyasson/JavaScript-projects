@@ -3,7 +3,7 @@ Write a function that takes a ph value and
 returns whether the value is acidic, neutral or alkaline. 
 (PH value < 7 is acidic, 7 is neutral, > 7 alkaline)
 */
-function myPh (ph) {
+function phCalculator(ph) {
     if (ph > 7 && ph <= 14) {
         result = "alkaline";
     } else if (ph < 7 && ph > 0) {
@@ -17,7 +17,7 @@ function myPh (ph) {
     return result;
 
 }
-console.log(myPh(14));
+console.log(phCalculator(14));
 
 /* 2.
 Write a function that takes price and discount percentage as parameters and 
@@ -28,17 +28,15 @@ The function should give an error message if the price or percentage are < 0.
 15 = 30 - (30 * (50 / 100)); 
 */
 function myDiscount(price, percentage) {
-    if (price <= 0 || percentage < 0) {
-        newPrice = "price and percentage should be greater than 0";
-    } else {
-        newPrice = price - (price * percentage/100);
-    
-    }
-    return newPrice;
+    let newPrice = price - (price * percentage/100);
+    if (price > 0 ) {
+        return newPrice;
+    } 
+    return "error";
     
 
 }
-console.log(myDiscount(30, 50));
+console.log(myDiscount(1, 50));
 
 /* 3. 
 You want to buy something from an online shop. 
@@ -48,11 +46,12 @@ Write a function that takes the cost of the product and location.
 It should print the amount of money you have to pay as:
 "You have to pay a total of 35€, 30€ for the product and 5€ for shipping"
 */
-function myShippingCost(product, location) {
+function shippingCost(product, location) {
+    let price;
     if (location == "eu") {
         price = 5 + product;
         console.log("You have to pay a total of " + price + "€, " + product + "€ for the product and 5€ for shipping");
-    }else if (location == "us" || "united state" || "canada") {
+    }else if (location == "us" ||"canada") {
         price = 15 + product;
         console.log("You have to pay a total of " + price + "€, " + product + "€ for the product and 15€ for shipping");
         
@@ -63,7 +62,7 @@ function myShippingCost(product, location) {
     return price;
 }
 
-myShippingCost(30, "eu");
+shippingCost(30, "eu");
 
 /* 4. 
 Write a function that prints this version of children's song
