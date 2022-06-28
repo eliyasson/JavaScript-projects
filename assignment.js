@@ -261,10 +261,10 @@ e.g. if given G, A, T, C the output should be C, T, A, G
 function encodeDNA1(strand) {
     let DNA = [];
     for (let i = 0; i < strand.length; i+= 1) {
-        if (strand[i] === "A") DNA.push(strand[i]= "T");
-        if (strand[i] === "T") DNA.push(strand[i]= "A");
-        if (strand[i] === "C") DNA.push(strand[i]= "G");
-        if (strand[i] === "G") DNA.push(strand[i]= "C");
+        if (strand[i] === "A") DNA.push("T");
+        if (strand[i] === "T") DNA.push("A");
+        if (strand[i] === "C") DNA.push("G");
+        if (strand[i] === "G") DNA.push("C");
     }
     return DNA;
 }
@@ -301,13 +301,14 @@ let shape3 = {
 };
 
 function areaCalculator(shape) {
-    if (shape.type == "rectangle") {
+    let result;
+    if (shape.type === "rectangle") {
         result = shape.side.length * shape.side.width;
-    } else if (shape.type == "triangle") {
+    } else if (shape.type === "triangle") {
         result = shape.side.base * shape.side.height * 0.5;
-    } else if (shape.type == "circle") {
+    } else if (shape.type === "circle") {
         result = Math.PI * shape.side.radius**2;
-    } else if (shape.type == "square") {
+    } else if (shape.type === "square") {
         result = shape.side.length * shape.side.width;
     } 
     return result;
@@ -348,11 +349,11 @@ let products = [{
     stockAmount: 0
 }];
 
-function stockChecker(product){
+function stockChecker(products){
     let outOfStock = [];
-    for (let i = 0; i < product.length; i++) {
-        if (product[i].stockAmount == 0) {
-           outOfStock.push(product[i].name);
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].stockAmount == 0) {
+           outOfStock.push(products[i].name);
         }
     }
     return outOfStock;
@@ -362,10 +363,10 @@ console.log(stockChecker(products));
 
 // Return the total sum of all the items in stock. 
 
-function SumOfItem(product){
+function SumOfItem(products){
     let sum = 0;
-    for (let i = 0; i < product.length; i++) { 
-        sum += product[i].stockAmount;
+    for (let i = 0; i < products.length; i++) { 
+        sum += products[i].stockAmount;
     }
     return sum;
 }
@@ -375,11 +376,11 @@ console.log(SumOfItem(products));
 Write a function that returns the products that are available in stock. 
 */
 
-function stockAvailable(product) {
+function stockAvailable(products) {
     let available = [];
-    for (let i = 0; i < product.length; i++) {
-        if (product[i].stockAmount > 0) {
-           available.push(product[i].name);
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].stockAmount > 0) {
+           available.push(products[i].name);
         }
     }
     return available;
@@ -392,10 +393,10 @@ Write a function that takes the products and a product name.
 	in the products array. 
 */
 
-function checkName(product, productName) {
-    for (let i = 0; i < product.length; i++) {
+function checkName(products, productsName) {
+    for (let i = 0; i < products.length; i++) {
 
-        if (product[i].name == productName) {
+        if (products[i].name == productsName) {
             return true;
         } 
     }
@@ -413,14 +414,15 @@ Write a function that takes the products and a product name.
 	(The function deletes the given product name if it exists)
 */
 
-function deleteProduct(product, productName) {
-    for (let i = 0; i < product.length; i++) {
-        if (product[i].name == productName) {
-            delete product[i];
+function deleteProduct(products, productsName) {
+    let existProductName = [];
+    for (let i = 0; i < products.length; i++) {
+        if (productName !== products[i].name) {
+            existProductsName.push(products[i]);
 
         }
     }
-    return console.log(product);
+    return console.log(existProductName);
 
 }
 deleteProduct(products, "apple"); 
