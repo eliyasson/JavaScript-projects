@@ -165,7 +165,7 @@ the functions largest and smallest.
 */
 function maxMin(a, b, c) {
 
-    function largest(a, b, c){
+function largest(a, b, c){
        if (a > b && a > c ) {
            result = a;
         } else if(b > a && b > c) {
@@ -175,9 +175,9 @@ function maxMin(a, b, c) {
         }
         return result;
 
-    }
+}
     
-    function smallest(a, b, c){
+function smallest(a, b, c){
         if (a < b && a < c) {
             result = a;
         } else if(b < a && b < c) {
@@ -187,7 +187,7 @@ function maxMin(a, b, c) {
         }
         return result;
        
-    }
+}
     return largest(a, b, c) + " & " +  smallest(a, b, c);
 }
 
