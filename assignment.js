@@ -394,10 +394,10 @@ Write a function that takes the products and a product name.
 	in the products array. 
 */
 
-function checkName(products, productsName) {
+function checkName(products, productName) {
     for (let i = 0; i < products.length; i++) {
 
-        if (products[i].name == productsName) {
+        if (products[i].name == productName) {
             return true;
         } 
     }
@@ -415,11 +415,11 @@ Write a function that takes the products and a product name.
 	(The function deletes the given product name if it exists)
 */
 
-function deleteProduct(products, productsName) {
+function deleteProduct(products, productName) {
     let existProductName = [];
     for (let i = 0; i < products.length; i++) {
         if (productName !== products[i].name) {
-            existProductsName.push(products[i]);
+            existProductName.push(products[i]);
 
         }
     }
