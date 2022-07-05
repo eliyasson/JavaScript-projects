@@ -91,6 +91,7 @@ function childrenSong() {
 Write a function that calculates the area of a triangle 
 */
 function area(base, height) {
+    let result;
     let area = (base * height) / 2;
     if(base <= 0 || height <= 0) { 
         result = ("The variable should be positive");
