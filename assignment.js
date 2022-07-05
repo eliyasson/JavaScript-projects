@@ -205,29 +205,29 @@ To determine whether a year is a leap year, follow these steps:
 */
 
 function leapYearCalculator(year) {
+    let result;
     if (year % 4 == 0) {
         if (year % 100 == 0 ) {
             if (year % 400 == 0) {
-                result = "Leap Year";
-                console.log(year + " is a leap year");
+                result = true;
     
                } else {
-                  result = "Not a leap Year";
-                  console.log(year + " is  not a leap year");
+                  result = false;
+                  
                }
         } else {
-            result = "Leap Year";
-            console.log(year + " is a leap year");
+            result = true;
+           
         }
 
     } else {
-        result = "Not a leap Year"
-        console.log(year + " is not a leap year");
+        result = false;
+        
     }
     return result;
 }
 
-leapYearCalculator(2020);
+console.log(leapYearCalculator(2020));
 
 /* 11. 
 Write a function that takes a parameter array of working hours 
